@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:  
+  title: Convert Currency
+  description: API to convert between different currencies using the exchange rates API.
+  version: 1.0.0
+servers:
+  - url: https://my-first-chatgpt-plugin.josephbenraz.repl.co
+paths:
+  /convert/{amount}/{base_currency}/{target_currency}:
+    get:
+      summary: Convert currency
+      operationId: getExchangeRate
+      parameters:
+        - name: amount
+          in: path
+          required: true
+          schema:
+            type: number
+        - name: base_currency
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: target_currency
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful conversion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  amount:
+                    type: number
+                  base_currency:
+                    type: string
+                  target_currency:
+                    type: string
+                  converted_amount:
+                    type: number
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

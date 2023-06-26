@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Convert Currency",
+  "name_for_model": "convercurrency",
+  "description_for_human": "Convert between different currencies using the exchange rates API.",
+  "description_for_model": "Assist the user with currency conversion using the exchange rates API.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://my-first-chatgpt-plugin.josephbenraz.repl.co/.well-known/openapi.yaml"
+  },
+  "logo_url": "http://localhost:5000/logo.png",
+  "contact_email": "support@example.com",
+  "legal_info_url": "http://www.example.com/legal"
+}
